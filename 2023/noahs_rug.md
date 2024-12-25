@@ -93,9 +93,10 @@ ORDER BY cnt DESC;
 SELECT * FROM customers
 WHERE customerid IN (
     SELECT customerid FROM customers_from_staten_buy_catf a
-    ORDER BY a.cnt DESC
+    ORDER BY a.cnt DESC -- don't judge me, I am tired
     LIMIT 1
 );
+-- also I don't do SQL
 ```
 
 Cat-lady Name: `Nicole Wilson`
