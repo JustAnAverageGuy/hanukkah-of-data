@@ -2,15 +2,22 @@
 [https://hanukkah.bluebird.sh/5784/](https://hanukkah.bluebird.sh/5784/) 
 
 ### 0
+
 *Answer*: `5777`
+
 It is also the zip password
 
+
 ### 1
+
 *Answer*: `826-636-2286`
+
 Investigator Name: `Sam Tannenbaum`
 
 ### 2
+
 *Answer*: `332-274-4185`
+
 Query:
 ```SQL
 SELECT DISTINCT * FROM customers NATURAL JOIN (
@@ -23,10 +30,12 @@ SELECT DISTINCT * FROM customers NATURAL JOIN (
 ) 
 WHERE name LIKE 'J% P%';
 ```
+
 Cleaner Name: `Joshua Peterson`
 
 ### 3
 *Answer*: `917-288-9635`
+
 Query:
 ```SQL
 CREATE TEMPORARY TABLE p2 as ... -- PART 2 QUERY 
@@ -41,6 +50,7 @@ Neighbor Name: `Robert Morton`
 
 ### 4
 *Answer*: `607-231-3605`
+
 Query:
 ```SQL
 CREATE TEMPORARY TABLE customer_id_counts  as 
@@ -57,10 +67,12 @@ SELECT * FROM customers NATURAL JOIN (
     WHERE cnt >= (SELECT MAX(cnt) FROM customer_id_counts)
 ); -- Get the customer which has done this the most times
 ```
+
 Reparier Name: `Renee Harmon`
 
 ### 5
 *Answer*: `631-507-6048`
+
 Query:
 ```SQL
 CREATE TEMPORARY TABLE customers_from_staten_buy_catf AS
@@ -84,4 +96,5 @@ WHERE customerid IN (
     LIMIT 1
 );
 ```
+
 Cat-lady Name: `Nicole Wilson`
