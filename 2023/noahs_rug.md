@@ -6,11 +6,17 @@
 
 *Answer*: `5777`
 
+Just checked google
+
 It is also the zip password
 
 ### 1
 
 *Answer*: `826-636-2286`
+
+Wrote a python script to get data from sqlite db and then converted last names into phone numbers (T9 encoding), then compared.
+
+This should be possible in pure sqlite, but I shudder at the thought of it. (because I don't do sql)
 
 Investigator Name: `Sam Tannenbaum`
 
