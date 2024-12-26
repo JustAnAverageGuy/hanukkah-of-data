@@ -141,7 +141,7 @@ Query:
 ```SQL
 CREATE TEMPORARY TABLE p6 AS ...; -- previous query, but only get customerid
 
-CREATE temporary TABLE colored_items AS
+CREATE TEMPORARY TABLE colored_items AS
 SELECT
   sku,
   substr ("desc", 1, instr ("desc", '(') -1) color_stripped_des,
