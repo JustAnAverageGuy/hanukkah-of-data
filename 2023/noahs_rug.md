@@ -137,6 +137,7 @@ from
 ```
 
 Bargain Hunter's Name: `Sherri Long`
+
 Customer Id: `4167`
 
 ### 7
@@ -199,6 +200,7 @@ maybe youngest ?
 | 1162       | Jeffrey Johnson  | 1984-08-06 | 516-810-7590 | 2022-04-23 15:31:27 |
 
 Ex Boyfriend's Name: `Carlos Myers`
+
 Customer Id: `5783`
 
 ### 8
@@ -229,4 +231,5 @@ WHERE
 ```
 
 Collecter's Name: `James Smith`
+
 Customer Id: `3808`
