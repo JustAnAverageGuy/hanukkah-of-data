@@ -132,3 +132,66 @@ from
 ```
 
 Bargain Hunter's Name: `Sherri Long`
+Customer Id: `4167`
+
+### 7
+*Answer*: `838-335-7157`
+
+Query:
+```SQL
+CREATE TEMPORARY TABLE p6 AS ...; -- previous query, but only get customerid
+
+CREATE temporary TABLE colored_items AS
+SELECT
+  sku,
+  substr ("desc", 1, instr ("desc", '(') -1) color_stripped_des,
+  shipped
+FROM
+  orders
+  NATURAL JOIN orders_items
+  NATURAL JOIN products
+WHERE
+  customerid IN p6 AND sku LIKE 'COL%';
+
+SELECT
+  customerid,
+  "name",
+  birthdate,
+  phone,
+  shipped
+FROM
+  customers
+  NATURAL JOIN (
+    SELECT
+      l.customerid,
+      l.shipped,
+      l.sku,
+      l."desc"
+    FROM
+      (
+        orders
+        NATURAL JOIN orders_items
+        NATURAL JOIN products
+      ) l,
+      colored_items r
+    WHERE
+      date(l.shipped) = date(r.shipped)
+      AND l.sku LIKE 'COL%'
+      AND instr (l."desc", r.color_stripped_des)
+      AND l.sku != r.sku
+  )
+LIMIT
+  10;
+```
+
+I don't know why it wasn't anyone else from the following
+
+| customerid | name             | birthdate  | phone        | shipped             |
+|:------------:|:------------------:|:------------:|:--------------:|:---------------------:|
+| 5783       | Carlos Myers     | 1986-04-27 | 838-335-7157 | 2018-12-31 12:26:39 |
+| 7474       | Alex Evans       | 1983-08-02 | 914-514-2194 | 2018-12-31 13:02:52 |
+| 2487       | Herbert Phillips | 1966-06-26 | 516-849-7413 | 2021-10-07 15:00:00 |
+| 1162       | Jeffrey Johnson  | 1984-08-06 | 516-810-7590 | 2022-04-23 15:31:27 |
+
+Ex Boyfriend's Name: `Carlos Myers`
+Customer Id: `5783`
