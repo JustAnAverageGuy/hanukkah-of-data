@@ -191,7 +191,7 @@ LIMIT
 ```
 
 I don't know why it wasn't anyone else from the following, 
-maybe youngest ?
+maybe youngest ? EDIT: Oh, I get it now, she bumped with him outside the shop, so the exit times must have been similar, so one with the smalles exit time difference with her shipped time among these guys
 | customerid | name             | birthdate  | phone        | shipped             |
 |:------------:|:------------------:|:------------:|:--------------:|:---------------------:|
 | 5783       | Carlos Myers     | 1986-04-27 | 838-335-7157 | 2018-12-31 12:26:39 |
