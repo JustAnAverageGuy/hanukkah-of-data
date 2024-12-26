@@ -100,3 +100,35 @@ WHERE customerid IN (
 ```
 
 Cat-lady Name: `Nicole Wilson`
+
+### 6
+*Answer*: `585-838-9161`
+
+Query:
+```SQL
+select *
+from
+  customers
+  NATURAL JOIN (
+    select
+      customerid,
+      sum(cost_to_noah - total) noah_loss
+    from
+      orders
+      NATURAL JOIN (
+        select
+          orderid,
+          sum(qty * wholesale_cost) cost_to_noah
+        from ( orders_items NATURAL JOIN products)
+        GROUP BY orderid
+      )
+    GROUP BY
+      customerid -- total loss a customer has caused to noah
+    ORDER BY
+      noah_loss desc
+    LIMIT
+      1
+  );
+```
+
+Bargain Hunter's Name: `Sherri Long`
