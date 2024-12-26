@@ -8,7 +8,6 @@
 
 It is also the zip password
 
-
 ### 1
 
 *Answer*: `826-636-2286`
@@ -195,3 +194,33 @@ maybe youngest ?
 
 Ex Boyfriend's Name: `Carlos Myers`
 Customer Id: `5783`
+
+### 8
+*Answer*: `212-547-3518`
+
+Query:
+```SQL
+CREATE TEMPORARY TABLE cust_item AS
+SELECT DISTINCT
+  customerid,
+  sku
+FROM
+  orders NATURAL JOIN orders_items
+WHERE
+  sku LIKE 'col%';
+
+SELECT
+  *
+FROM
+  customers cc
+WHERE
+  NOT EXISTS (
+    SELECT sku FROM products
+    WHERE
+      sku LIKE 'COL%'
+      AND (cc.customerid, sku) NOT IN cust_item
+  );
+```
+
+Collecter's Name: `James Smith`
+Customer Id: `3808`
